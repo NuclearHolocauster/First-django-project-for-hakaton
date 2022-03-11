@@ -1,0 +1,20 @@
+from rest_framework import serializers
+from .models import Room, User, Equipment
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = '__all__'
+
+
+class RoomSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Room
+        fields = '__all__'
+
+
+class EquipmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Equipment
+        fields = '__all__'
