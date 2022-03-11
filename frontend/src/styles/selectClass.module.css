@@ -11,6 +11,19 @@ form{
     display: flex;
     justify-content: space-around;
     padding: 25px;
+    align-items: center;
+    margin-top: 75px;
+}
+
+form > *{
+    width: 25%;
+    margin: 15px;
+}
+
+form > a{
+    background: #0863D8;
+    padding: 25px 75px;
+    color: white;
 }
 
 .multiSelectContainer{

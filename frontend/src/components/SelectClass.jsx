@@ -29,15 +29,18 @@ const SelectClass = () => {
             <h2 className={cl.firstTitle}>Подобрать аудиторию</h2>
             <p className={cl.selectClassDesc}>На этом сайте вы можете выбрат необходимую аудиторию для вашего сайта</p>
             <form action="">
-                <Select 
+                <Select
                     options={options1}
                     placeholder=''
-                    defaultInputValue='10'
                 />
                 <CreatableSelect 
                     isMulti
+                    placeholder=''
                     options={options2}/>
-                <Select options={options3} />
+                <Select 
+                    options={options3}
+                    placeholder='' 
+                />
                 <Link to="">Подобрать</Link>
             </form>
         </div>
