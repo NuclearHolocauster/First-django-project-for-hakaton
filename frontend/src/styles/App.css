@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    background: #F8FDFE;
+}
+
+nav{
+    display: flex;
+    padding: 10px;
+}
+
+a{
+    color: black;
+}
+
+.navbarLeft{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    justify-content: space-around;
+}
+
+.navbarRight{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 40%;
+    padding-right: 135px;
+}
+
+.navbarRight > * > a{
+    background: #2F80ED;
+    border-radius: 6px;
+    padding: 10px 30px;
+    color: white;
+}

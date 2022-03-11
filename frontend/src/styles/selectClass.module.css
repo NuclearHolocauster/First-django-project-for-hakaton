@@ -1,0 +1,33 @@
+.selectClassContent{
+    padding: 190px 120px 120px 100px;
+    width: 100%;
+    text-align: center;
+    background-image: url('../images/img1.png');
+    background-size: cover;
+}
+
+form{
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 25px;
+}
+
+.multiSelectContainer{
+    max-width: 25%;
+}
+
+.firstTitle{
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 71px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.selectClassDesc{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: white;
+}
