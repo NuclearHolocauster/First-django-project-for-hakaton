@@ -17,6 +17,10 @@ class EquipmentCreateView(generics.CreateAPIView):
     serializer_class = EquipmentSerializer
 
 
+class ReservationCreateView(generics.CreateAPIView):
+    serializer_class = ReservationSerializer
+
+
 class UserListView(generics.ListAPIView):
     serializer_class = UserSerializer
     queryset = User.objects.all()
@@ -34,6 +38,11 @@ class EquipmentListView(generics.ListAPIView):
     filterset_class = EquipmentFilter
 
 
+class ReservationListView(generics.ListAPIView):
+    serializer_class = ReservationSerializer
+    queryset = Reservation.objects.all()
+
+
 class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = UserSerializer
     queryset = User.objects.all()
@@ -49,9 +58,11 @@ class EquipmentDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Equipment.objects.all()
 
 
+class ReservationDetailView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = ReservationSerializer
+    queryset = Reservation.objects.all()
+
+
 class RoomEquipmentView(generics.ListAPIView):
     serializer_class = EquipmentSerializer
-
-
-
 
