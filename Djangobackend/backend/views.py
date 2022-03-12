@@ -1,6 +1,8 @@
 from rest_framework import generics
 from .serializer import *
 from .models import Room, User, Equipment
+from django_filters.rest_framework import DjangoFilterBackend
+from .services import EquipmentFilter
 
 
 class UserCreateView(generics.CreateAPIView):
@@ -28,6 +30,8 @@ class RoomListView(generics.ListAPIView):
 class EquipmentListView(generics.ListAPIView):
     serializer_class = EquipmentSerializer
     queryset = Equipment.objects.all()
+    filter_backends = (DjangoFilterBackend, )
+    filterset_class = EquipmentFilter
 
 
 class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
@@ -43,6 +47,11 @@ class RoomDetailView(generics.RetrieveUpdateDestroyAPIView):
 class EquipmentDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = EquipmentSerializer
     queryset = Equipment.objects.all()
+
+
+class RoomEquipmentView(generics.ListAPIView):
+    serializer_class = EquipmentSerializer
+
 
 
 
