@@ -7,8 +7,8 @@ class CharFilterInFilter(filters.BaseInFilter, filters.CharFilter):
 
 
 class EquipmentFilter(filters.FilterSet):
-    audience_id = CharFilterInFilter(field_name='audience_id', lookup_expr='in')
+    audience_id = CharFilterInFilter(field_name='audience_number', lookup_expr='in')
 
     class Meta:
         model = Equipment
-        fields = ['audience_id']
+        fields = ['audience_number']

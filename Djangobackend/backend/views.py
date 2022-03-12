@@ -53,5 +53,19 @@ class RoomEquipmentView(generics.ListAPIView):
     serializer_class = EquipmentSerializer
 
 
+class ReservationCreateView(generics.CreateAPIView):
+    serializer_class = ReservationSerializer
+
+
+class ReservationListView(generics.ListAPIView):
+    serializer_class = ReservationSerializer
+    queryset = Reservation.objects.all()
+
+
+class ReservationDetailView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = ReservationSerializer
+    queryset = Reservation.objects.all()
+
+
 
 
