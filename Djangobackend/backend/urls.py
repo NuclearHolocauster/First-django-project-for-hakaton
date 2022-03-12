@@ -1,5 +1,8 @@
 from django.urls import path
 from .views import *
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
 
 
 app_name = 'backend'
@@ -17,5 +20,4 @@ urlpatterns = [
     path('equipment/<int:pk>', EquipmentDetailView.as_view()),
     path('reservation/<int:pk>', ReservationDetailView.as_view()),
     path('equipment/all?audience_number=<int:pk>', EquipmentListView.as_view())
-
 ]
