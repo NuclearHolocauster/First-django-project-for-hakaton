@@ -17,7 +17,7 @@ class Room(models.Model):
     audience_number = models.CharField(primary_key=True, verbose_name='Номер аудитории', unique=True, max_length=64)
     description = models.CharField(verbose_name='Описание', max_length=128)
     capacity = models.CharField(verbose_name='вместимость(чел)', max_length=64)
-    Photo = models.ImageField(upload_to='images')
+    Photo = models.ImageField(upload_to='images', null=True, blank=True)
 
 
 class Equipment(models.Model):
