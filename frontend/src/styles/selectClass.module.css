@@ -6,7 +6,7 @@
     background-size: cover;
 }
 
-form{
+.formStart{
     background-color: white;
     display: flex;
     justify-content: space-around;
@@ -15,15 +15,22 @@ form{
     margin-top: 75px;
 }
 
-form > *{
+.formStart > *{
     width: 25%;
     margin: 15px;
 }
 
-form > a{
+.formStart > a{
     background: #0863D8;
     padding: 25px 75px;
     color: white;
+    border: 1px #0863D8 solid;
+    transition: all 0.3s ease;
+}
+
+.formStart > a:hover{
+    background: white;
+    color: #0863D8;
 }
 
 .multiSelectContainer{

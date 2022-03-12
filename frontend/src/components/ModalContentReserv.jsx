@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import ClassService from './API/ClassService'
+import React from 'react'
 import ModalContentInfo from './ModalContentInfo'
+import ModalContResForm from './ModalContResForm'
 
 const ModalContentReserv = ({room, roomInfo}) => {	
   return (
-    <ModalContentInfo room={room} roomInfo={roomInfo} />
+    <div>
+      <ModalContentInfo room={room} roomInfo={roomInfo} />
+      <ModalContResForm room={room}/>
+    </div> 
   )
 }
 

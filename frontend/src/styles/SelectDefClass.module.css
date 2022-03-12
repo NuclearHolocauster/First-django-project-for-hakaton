@@ -19,6 +19,13 @@
     border-radius: 6px;
     padding: 16px 64px 16px 32px;
     color: white;
+    border: 1px #0863D8 solid;
+    transition: all 0.3s ease;
+}
+
+.selectDefClassDesc > * > a:hover{
+    background: white;
+    color: #0863D8;
 }
 
 .selectDefClassDesc > * > a::after{

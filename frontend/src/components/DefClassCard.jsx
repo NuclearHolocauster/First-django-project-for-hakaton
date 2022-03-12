@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import people from '../images/people.png'
+import people from '../images/image4.png'
 import MyModal from './UI/MyModal/MyModal'
 import ModalContentReserv from './ModalContentReserv'
 import ClassService from './API/ClassService'
@@ -17,8 +17,8 @@ const DefClassCard = ({room}) => {
   return (
     <div>
         <div className='defClassCardContent'>
-          <img src={people} alt="" width='80' height='70' />
-          {room.audience_number}<br/>Вметимость: {room.capacity} человек
+          <img src={people} style={{'width': '100%', 'height': '100%'}}/>
+          <span className='roomNumCard'>{room.audience_number}</span>
         </div>
         <div className='toBook' onClick={() => {setModalVisible(true); fetchRoomInfo(room.audience_number)}}>Подробнее</div>
         <MyModal visible={modalVisible} setVisible={setModalVisible}>

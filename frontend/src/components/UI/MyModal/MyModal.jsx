@@ -1,5 +1,6 @@
 import React from 'react'
 import cl from './MyModal.module.css'
+import close from '../../../images/close.png'
 
 
 const MyModal = ({children, visible, setVisible}) => {
@@ -11,9 +12,10 @@ const MyModal = ({children, visible, setVisible}) => {
   }
 
   return (
-    <div className={rootingClass.join(' ')} onClick={() => setVisible(false)}>
+    <div className={rootingClass.join(' ')}>
         <div className={cl.myModalContent}>
-            {children}
+          <img src={close} onClick={() => setVisible(false)} style={{'cursor': 'pointer'}} />
+          {children}
         </div>
     </div>
   )
