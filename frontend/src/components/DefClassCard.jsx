@@ -1,15 +1,17 @@
 import React from 'react'
 import cl from '../styles/DefClassCard.module.css'
 import people from '../images/people.png'
+import MyModal from './UI/MyModal/MyModal'
 
-const DefClassCard = ({room}) => {
+const DefClassCard = ({room, modal, setModal}) => {
   return (
     <div>
         <div className='defClassCardContent'>
           <img src={people} alt="" width='80' height='70' />
           {room.audience_number}<br/>Вметимость: {room.capacity} человек
         </div>
-        <div className='toBook'>Забронировать</div>
+        <div className='toBook' onClick={() => setModal(true)}>Подробнее</div>
+        <MyModal visible={modal} setVisible={setModal}></MyModal>
     </div>
   )
 }
