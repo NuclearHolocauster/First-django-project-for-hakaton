@@ -4,6 +4,7 @@ import DefClassCard from '../components/DefClassCard'
 
 const DefClass = () => {
   let [classes, setClasses] = useState([])
+  let [modal, setModal] = useState(false)
 
   async function fetchClass() {
     const response = await ClassService.getAll()
@@ -20,7 +21,7 @@ const DefClass = () => {
       <div className='defClass'>
         {
           classes.map(room => 
-            <DefClassCard room={room} key={room.audience_number}/>
+            <DefClassCard room={room} key={room.audience_number} modal={modal} setModal={setModal}/>
           )
         }
       </div>
