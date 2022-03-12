@@ -12,7 +12,7 @@ const SelectDefClass = () => {
                 <p>Полный список аудиторий со всеми харатеристами  Подходит для препожователей нашего вуза, которые знают какая имеено аудитория им нужна</p>
             </div>
             <div>
-                <Link to="">Выбрать</Link>
+                <Link to="/def-classes">Выбрать</Link>
             </div>
         </div>
         <div className={cl.selectDefClassImg}>

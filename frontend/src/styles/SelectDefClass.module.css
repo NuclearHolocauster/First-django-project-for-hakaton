@@ -12,6 +12,7 @@
 }
 
 .selectDefClassDesc > * > a{
+    position: relative;
     margin-top: 150px;
     display: inline-block;
     background: #0863D8;
@@ -23,7 +24,7 @@
 .selectDefClassDesc > * > a::after{
     content: ">";
     position: absolute;
-    top: 22px;
+    top: 17px;
     right: 22px;
 }
 
@@ -41,9 +42,6 @@
 
 .selectDefClassImg{
     width: 50%;
-    /* background-image: url('../images/img2.png');
-    background-size: cover;
-    background-position: center; */
 }
 
 .selectDefClassImg > img{
