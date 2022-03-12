@@ -65,4 +65,3 @@ class ReservationDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 class RoomEquipmentView(generics.ListAPIView):
     serializer_class = EquipmentSerializer
-
