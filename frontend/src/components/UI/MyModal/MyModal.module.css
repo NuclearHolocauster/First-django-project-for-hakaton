@@ -13,6 +13,7 @@
 }
 
 .myModalContent{
+    position: relative;
     padding: 50px;
     background-color: white;
     border-radius: 10px;
@@ -25,4 +26,10 @@
 
 .myModal.active{
     top: 0px;
+}
+
+.myModalContent > img{
+    position: absolute;
+    top: 40px;
+    right: 40px;
 }

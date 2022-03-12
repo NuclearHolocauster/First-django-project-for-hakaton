@@ -18,12 +18,11 @@ const ModalContentInfo = ({room, roomInfo}) => {
                 <li>
                     <h4>Что имеется в аудитории:</h4>
                     <ul>
-                        {roomInfo.map(info => <li>{info.equipment_name}: {info.number}</li>)}
+                        {roomInfo.map(info => <li key={info.id}>{info.equipment_name}: {info.number}</li>)}
                     </ul>
                 </li>
-                <li>
-                    <h4></h4>
-                    <p></p>
+                <li style={{'marginTop': '50px'}}>
+                    <h4>Оставьте заявку на бронь</h4>
                 </li>
             </ul>
         </div>
