@@ -14,7 +14,6 @@ const MyModal = ({children, visible, setVisible}) => {
     <div className={rootingClass.join(' ')} onClick={() => setVisible(false)}>
         <div className={cl.myModalContent}>
             {children}
-            Привет
         </div>
     </div>
   )
