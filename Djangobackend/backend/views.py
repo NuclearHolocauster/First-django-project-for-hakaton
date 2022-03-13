@@ -2,7 +2,7 @@ from rest_framework import generics
 from .serializer import *
 from .models import Room, User, Equipment
 from django_filters.rest_framework import DjangoFilterBackend
-from .services import EquipmentFilter
+from .services import EquipmentFilter, RoomCapacityFilter
 
 
 class UserCreateView(generics.CreateAPIView):
@@ -21,6 +21,10 @@ class ReservationCreateView(generics.CreateAPIView):
     serializer_class = ReservationSerializer
 
 
+class TicketCreateView(generics.CreateAPIView):
+    serializer_class = TicketSerializer
+
+
 class UserListView(generics.ListAPIView):
     serializer_class = UserSerializer
     queryset = User.objects.all()
@@ -29,6 +33,8 @@ class UserListView(generics.ListAPIView):
 class RoomListView(generics.ListAPIView):
     serializer_class = RoomSerializer
     queryset = Room.objects.all()
+    filter_backends = (DjangoFilterBackend, )
+    filterset_class = RoomCapacityFilter
 
 
 class EquipmentListView(generics.ListAPIView):
@@ -41,6 +47,11 @@ class EquipmentListView(generics.ListAPIView):
 class ReservationListView(generics.ListAPIView):
     serializer_class = ReservationSerializer
     queryset = Reservation.objects.all()
+
+
+class TicketListView(generics.CreateAPIView):
+    serializer_class = TicketSerializer
+    queryset = Ticket.objects.all()
 
 
 class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
@@ -61,6 +72,11 @@ class EquipmentDetailView(generics.RetrieveUpdateDestroyAPIView):
 class ReservationDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ReservationSerializer
     queryset = Reservation.objects.all()
+
+
+class TicketDetailView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = TicketSerializer
+    queryset = Ticket.objects.all()
 
 
 class RoomEquipmentView(generics.ListAPIView):

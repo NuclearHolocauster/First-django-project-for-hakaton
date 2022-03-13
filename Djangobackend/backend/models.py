@@ -19,9 +19,9 @@ class User(models.Model):
 
 class Room(models.Model):
     audience_number = models.CharField(primary_key=True, verbose_name='Номер аудитории', unique=True, max_length=64)
-    description = models.CharField(verbose_name='Описание', max_length=128)
+    description = models.TextField(verbose_name='Описание')
     capacity = models.CharField(verbose_name='вместимость(чел)', max_length=64)
-    Photo = models.ImageField(upload_to='images', null=True, blank=True)
+    photo = models.ImageField(upload_to='images', null=True, blank=True)
 
     def __str__(self):
         return self.audience_number
@@ -43,11 +43,23 @@ class Equipment(models.Model):
 
 class Reservation(models.Model):
     user = models.ForeignKey(User, verbose_name='Кто забронировал', on_delete=models.CASCADE)
-    event = models.CharField(verbose_name='Для чего бронь', max_length=128)
+    event = models.TextField(verbose_name='Для чего бронь')
     audience_number = models.ForeignKey(Room, verbose_name='Номер аудитории', on_delete=models.CASCADE)
-    reservation_start = models.DateTimeField(verbose_name='Дата и время начала брони',  null=True, blank=True, unique=True)
-    reservation_end = models.DateTimeField(verbose_name='Дата и время окончания брони', null=True, blank=True, unique=True)
+    reservation_start = models.DateTimeField(verbose_name='Дата и время начала брони', unique=True)
+    reservation_end = models.DateTimeField(verbose_name='Дата и время окончания брони', unique=True)
 
     class Meta:
         verbose_name = 'Бронирование'
         verbose_name_plural = 'Бронирование'
+
+
+class Ticket(models.Model):
+    user = models.ForeignKey(User, verbose_name='от кого заявка', on_delete=models.CASCADE)
+    audience = models.ForeignKey(Room, verbose_name='аудитория', on_delete=models.CASCADE)
+    event = models.TextField(verbose_name='Для чего бронь')
+    reservation_start = models.DateTimeField(verbose_name='Дата и время начала брони', unique=True)
+    reservation_end = models.DateTimeField(verbose_name='Дата и время окончания брони', unique=True)
+
+    class Meta:
+        verbose_name = 'Заявка'
+        verbose_name_plural = 'Заявка'

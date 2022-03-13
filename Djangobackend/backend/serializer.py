@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Room, User, Equipment, Reservation
+from .models import Room, User, Equipment, Reservation, Ticket
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -23,7 +23,7 @@ class EquipmentSerializer(serializers.ModelSerializer):
 class ReservationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Reservation
-        fields = ['id', 'user', 'audience_number', 'reservation_start', 'reservation_end']
+        fields = ['id', 'event', 'user', 'audience_number', 'reservation_start', 'reservation_end']
 
     def validate(self, data):
         """Велосипед"""
@@ -37,3 +37,9 @@ class ReservationSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("time line crossing")
 
         return data
+
+
+class TicketSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Ticket
+        fields = '__all__'
