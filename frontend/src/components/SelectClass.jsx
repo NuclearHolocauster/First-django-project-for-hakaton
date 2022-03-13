@@ -42,7 +42,7 @@ const SelectClass = () => {
         <div className={cl.selectClassContent}>
             <h2 className={cl.firstTitle}>Подобрать аудиторию</h2>
             <p className={cl.selectClassDesc}>На этом сайте вы можете выбрат необходимую аудиторию для вашего сайта</p>
-            <form action="">
+            <form action="" className={cl.formStart}>
                 <Select
                     options={options1}
                     placeholder='Кол-во человек'
