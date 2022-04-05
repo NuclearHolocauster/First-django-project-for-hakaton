@@ -1,4 +1,6 @@
 from rest_framework import serializers
+from rest_framework.decorators import api_view
+
 from .models import Room, User, Equipment, Reservation, Ticket
 
 

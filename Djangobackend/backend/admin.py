@@ -49,9 +49,6 @@ class TicketAdmin(admin.ModelAdmin):
     list_display_links = ('id', 'user', 'event', 'audience')
     search_fields = ('id', 'user', 'event', 'audience')
 
-    def ticket_success(self, data):
-        print(data)
-
 
 admin.site.register(User, UserAdmin)
 admin.site.register(Room, RoomAdmin)

@@ -47,7 +47,7 @@ class Reservation(models.Model):
     audience_number = models.ForeignKey(Room, verbose_name='Номер аудитории', on_delete=models.CASCADE)
     reservation_start = models.DateTimeField(verbose_name='Дата и время начала брони', unique=True)
     reservation_end = models.DateTimeField(verbose_name='Дата и время окончания брони', unique=True)
-
+    
     class Meta:
         verbose_name = 'Бронирование'
         verbose_name_plural = 'Бронирование'
